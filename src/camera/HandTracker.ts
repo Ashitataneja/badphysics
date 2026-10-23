@@ -2,7 +2,8 @@ import type { HandLandmarker as HandLandmarkerType } from '@mediapipe/tasks-visi
 import { CameraError } from './CameraManager';
 import type { RawHand } from './landmarkFeatures';
 
-const BASE = import.meta.env.BASE_URL;
+// Absolute, so it works whether the app is served from / or a subpath.
+const BASE = new URL(import.meta.env.BASE_URL, window.location.href).href;
 export const MODEL_URL = `${BASE}models/hand_landmarker.task`;
 export const WASM_URL = `${BASE}mediapipe/wasm`;
 

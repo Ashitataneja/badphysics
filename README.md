@@ -35,6 +35,15 @@ To explore without a camera, click **or explore with mouse & keyboard** on the l
 | `npm run typecheck` | Type-check only |
 | `npm run fetch-model` | Re-download the hand model and re-copy the WASM runtime |
 
+### Deploying to GitHub Pages
+
+The source must be built before it can be served. GitHub Pages can't serve `index.html` from the repo root directly: it points at TypeScript the browser can't run. The included workflow (`.github/workflows/deploy-pages.yml`) builds the app and publishes `dist/` on every push.
+
+1. Go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+2. Push, or re-run the **Deploy to GitHub Pages** workflow from the Actions tab.
+
+Pages is served over HTTPS, so camera access works there.
+
 ### The hand-tracking model
 
 The app loads two things from `public/`:

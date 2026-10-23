@@ -1,0 +1,33 @@
+{
+  "name": "bad-physics",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "BAD PHYSICS — a webcam-controlled 3D installation where your hands rewrite the laws of reality.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p . && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p .",
+    "fetch-model": "node scripts/fetch-model.mjs",
+    "postinstall": "node scripts/fetch-model.mjs --soft"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
